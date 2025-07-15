@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Components
 import Tabs from "./Tabs.jsx";
 import Contact from "./Contact.jsx";
+import MapCanvas from "./MapCanvas";
 
 // Images
 import mainImage from "../assets/images/cake/mainImage.webp";
@@ -12,7 +13,6 @@ import mainImageTop from "../assets/images/cake/mainImage-top.png";
 import mainImageBottom from "../assets/images/cake/mainImage-bottom.png";
 import cookingImge from "../assets/images/cake/cooking.webp";
 import cookingButter from "../assets/images/cake/cooking-butter.webp";
-import shopImge from "../assets/images/cake/shop.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,7 +25,7 @@ function Main() {
     sections.forEach((section) => {
       gsap.fromTo(
         section,
-        { autoAlpha: 0, y: 50 }, // 初始透明度0，Y軸往下50px
+        { autoAlpha: 0, y: 50 },
         {
           duration: 1,
           autoAlpha: 1,
@@ -33,9 +33,8 @@ function Main() {
           ease: "power2.out",
           scrollTrigger: {
             trigger: section,
-            start: "top 80%", // 當section頂端距離視窗底部80%位置時觸發
+            start: "top 80%",
             toggleActions: "play none none none",
-            // markers: true, // 調試用
           },
         }
       );
@@ -76,6 +75,7 @@ function Main() {
       </div>
 
       <Tabs />
+      <MapCanvas />
       <Contact />
     </main>
   );
