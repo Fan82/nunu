@@ -7,12 +7,11 @@ import Tabs from "./Tabs.jsx";
 import Contact from "./Contact.jsx";
 
 // Images
-import mainImage from "../assets/images/cake/mainImage.gif";
+import mainImage from "../assets/images/cake/mainImage.webp";
 import mainImageTop from "../assets/images/cake/mainImage-top.png";
 import mainImageBottom from "../assets/images/cake/mainImage-bottom.png";
-import cookingImge from "../assets/images/cake/cooking.gif";
-import spinerImge from "../assets/images/cake/spiner.gif";
-import cookingButter from "../assets/images/cake/cooking-butter.gif";
+import cookingImge from "../assets/images/cake/cooking.webp";
+import cookingButter from "../assets/images/cake/cooking-butter.webp";
 import shopImge from "../assets/images/cake/shop.png";
 
 gsap.registerPlugin(ScrollTrigger);

@@ -49,20 +49,56 @@
     position: fixed
     bottom: 0
     display: flex
-    flex-direction: column
     justify-content: center
     align-items: center
-    gap: 8px
     width: 200px
     height: 200px
-    cursor: pointer
-    &::before
-        content: ''
-        width: 1px
-        height: 50px
-        background-color: variables.$dark
+    > div
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 8px
+        width: 80px
+        height: 80px
+        overflow: hidden
+        &::before,
+        &::after
+            content: ''
+            position: relative
+            width: 1px
+            height: 50px
+            background-color: variables.$dark
+            animation: moveUpFade 3s linear infinite
+        &::after
+            top: 30px
+            animation-direction: reverse
+        &::before
+            display: none
+            bottom: 30px
     &.top
-        flex-direction: column-reverse
+        > div
+            &::before
+                display: block
+            &::after
+                display: none
+
+@keyframes moveUpFade
+    0%
+        transform: translateY(50%)
+        opacity: 0
+
+    10%
+        opacity: 1
+
+    90%
+        transform: translateY(-50%)
+        opacity: 1
+
+    100%
+        opacity: 0
+        transform: translateY(-90%)
+
 // button
 button
     background-color: #fff

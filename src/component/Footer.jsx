@@ -1,5 +1,5 @@
 import React from "react";
-import IG from "../assets/images/instagram.png";
+import IG from "../assets/images/instagram.svg";
 
 function Footer() {
   return (
