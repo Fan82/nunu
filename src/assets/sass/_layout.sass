@@ -1,0 +1,87 @@
+@use './variables.sass'
+
+// 基本配置
+// Header
+header
+    position: sticky
+    top: 0
+    left: 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    height: 80px
+    padding: 20px 40px
+    backdrop-filter: blur(10px)
+    img
+        object-fit: cover
+        width: 180px
+        height: 100%
+a
+    width: auto
+    height: 100%
+    cursor: pointer
+    font-size: 18px
+nav
+    display: flex
+    justify-content: center
+    align-items: center
+    a:first-child
+        border-right: 1px solid variables.$dark
+        padding: 0 8px 0 0
+        margin-right: 8px
+// main
+main
+    position: relative
+    padding: 0 40px
+.content-box
+    text-align: center
+    padding: 120px 0
+    margin-bottom: 80px
+// list
+.list
+    justify-content: center
+    align-items: center
+    gap: 16px
+    font-size: 24px
+    div
+        text-align: left
+    .title
+        margin-bottom: 12px
+        font-size: 36px
+        font-weight: 800
+        &::after
+            content: ''
+            position: absolute
+            bottom: 0
+            left: -2px
+            width: 60%
+            height: .5px
+            background-color: variables.$dark
+            opacity: 0.5
+    .time
+        font-weight: 600
+        margin-bottom: 24px
+        p
+            font-weight: normal
+            padding: 4px 0
+// footer
+footer
+    position: sticky
+    bottom: 0
+    left: 0
+    width: 100%
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 4px 12px
+    backdrop-filter: blur(10px)
+    a
+        font-size: 12px
+        margin: 0 20px
+        &:hover
+            text-decoration: underline
+    p
+        font-size: 12px
+    img
+        width: 20px

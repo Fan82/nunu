@@ -1,0 +1,90 @@
+@use './variables.sass'
+
+// 元件
+// tab
+// 標籤列
+.tab-list
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 32px
+    > div
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 8px
+    img
+        width: 10vw
+        height: 10vw
+    .labelTitle
+        width: auto
+        height: 1vw
+// 內容
+.tab-content
+    position: relative
+    ul
+        left: calc(50% + 20vw)
+        text-align: left
+        li
+            position: relative
+            margin-bottom: 65px
+            &::after
+                content: ''
+                position: absolute
+                bottom: -4px
+                left: -4px
+                width: 100%
+                height: 2px
+                background-image: url('../../assets/images/cake/line.png')
+                background-position: center
+    img
+        position: relative
+        width: 30vw
+        height: 30vw
+        left: -6vw
+
+// scroll
+.component-svg
+    position: fixed
+    bottom: 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    gap: 8px
+    width: 200px
+    height: 200px
+    cursor: pointer
+    &::before
+        content: ''
+        width: 1px
+        height: 50px
+        background-color: variables.$dark
+    &.top
+        flex-direction: column-reverse
+// button
+button
+    background-color: #fff
+    padding: 4px 8px
+    border-radius: 100px
+
+// animation
+.bounce-in
+    animation: bounceIn 0.5s ease
+
+.scroll-section
+    opacity: 0
+    transform: translateY(50px)
+
+@keyframes bounceIn
+    0%
+        transform: scale(0.9)
+        opacity: 0
+
+    60%
+        transform: scale(1.05)
+        opacity: 1
+
+    100%
+        transform: scale(1)
