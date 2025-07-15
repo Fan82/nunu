@@ -5,48 +5,73 @@ const MapCanvas = () => {
   const [car, setCar] = useState({ x: 50, y: 50 });
   const [destination, setDestination] = useState(null);
   const [info, setInfo] = useState(null);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const mapImage = useRef(null);
+  const carImage = useRef(null);
 
-  // 地區資訊範例
   const areaInfo = [
-    { x: 200, y: 100, name: "區域 A", description: "這裡是 A 區" },
-    { x: 400, y: 200, name: "區域 B", description: "這裡是 B 區" },
-    { x: 800, y: 50, name: "區域 C", description: "這裡是 C 區" },
+    { x: 650, y: 460, name: "mini nunu", description: "Suntec City" },
+    { x: 1240, y: 280, name: "nunu Van", description: "Hong Lim Park" },
   ];
 
   useEffect(() => {
+    const loadImages = () => {
+      const map = new Image();
+      const car = new Image();
+      map.src = "./map.png"; // 放在 public 的圖片路徑
+      car.src = "./van.png"; // 車子圖片
+
+      map.onload = car.onload = () => {
+        mapImage.current = map;
+        carImage.current = car;
+        setImagesLoaded(true);
+      };
+    };
+
+    loadImages();
+  }, []);
+
+  // 畫面
+  useEffect(() => {
+    if (!imagesLoaded) return;
+
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
 
     const draw = () => {
+      // 清空畫面
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // 畫地圖背景
-      ctx.fillStyle = "#f6f5ee";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(mapImage.current, 0, 0, canvas.width, canvas.height);
 
       // 畫地點標記
       areaInfo.forEach((area) => {
         ctx.beginPath();
         ctx.arc(area.x, area.y, 8, 0, Math.PI * 2);
-        ctx.fillStyle = "orange";
+        ctx.fillStyle = "#3B3B3B";
         ctx.fill();
         ctx.closePath();
       });
 
-      // 畫車子
-      ctx.beginPath();
-      ctx.arc(car.x, car.y, 10, 0, Math.PI * 2);
-      ctx.fillStyle = "blue";
-      ctx.fill();
-      ctx.closePath();
+      // 畫車子圖片
+      const carWidth = 220;
+      const carHeight = 220;
+      ctx.drawImage(
+        carImage.current,
+        car.x - carWidth / 2,
+        car.y - carHeight / 2,
+        carWidth,
+        carHeight
+      );
     };
 
     draw();
-  }, [car]);
+  }, [car, imagesLoaded]);
 
-  // 控制車子移動動畫
+  // 車子移動
   useEffect(() => {
-    if (!destination) return;
+    if (!destination || !imagesLoaded) return;
 
     const move = () => {
       setCar((prev) => {
@@ -74,35 +99,21 @@ const MapCanvas = () => {
 
     const interval = setInterval(move, 16);
     return () => clearInterval(interval);
-  }, [destination]);
+  }, [destination, imagesLoaded]);
 
-  // 點擊設定目的地
   const handleClick = (e) => {
     const rect = canvasRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
     setDestination({ x, y });
-    setInfo(null); // 清除之前的資訊
+    setInfo(null);
   };
 
   return (
     <div>
-      <canvas
-        ref={canvasRef}
-        width={600}
-        height={400}
-        // style={{ border: "1px solid #ccc" }}
-        onClick={handleClick}
-      />
+      <canvas ref={canvasRef} width={1400} height={500} onClick={handleClick} />
       {info && (
-        <div
-          style={{
-            marginTop: 10,
-            padding: 10,
-            background: "#fffbe6",
-            border: "1px solid #f5c518",
-          }}
-        >
+        <div>
           <strong>{info.name}</strong>
           <p>{info.description}</p>
         </div>
