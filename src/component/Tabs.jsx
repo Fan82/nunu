@@ -68,24 +68,44 @@ const Tabs = () => {
   const currentContent = tabs.find((tab) => tab.id === activeTab)?.content;
 
   return (
-    <div className="content-box relative">
+    <div className="relative text-center px-[120px] py-0 mb-[80px]">
       {currentContent && (
-        <div key={activeTab} className="tab-content bounce-in">
-          <img src={currentContent.image} alt="nunu Wheel Cake" />
-          <ul className="absolute center">
+        <div
+          key={activeTab}
+          className="relative flex justify-center items-center bounce-in"
+        >
+          <img
+            className="relative w-96 h-fit left-16"
+            src={currentContent.image}
+            alt="nunu Wheel Cake"
+          />
+          <ul className="relative text-left left-24">
             {currentContent.textList.map((item, index) => (
-              <li key={index}>{item}</li>
+              <li
+                key={index}
+                className="relative mb-10 after:content-[''] after:absolute after:bottom-[-4px] after:left-[-4px] after:w-full after:h-[1px] after:bg-dark after:opacity-30"
+              >
+                {item}
+              </li>
             ))}
           </ul>
         </div>
       )}
       {/* 標籤 */}
-      <div className="tab-list">
+      <div className="flex justify-center items-center gap-8 mt-12">
         {tabs.map((tab) => (
-          <div key={tab.id} onClick={() => setActiveTab(tab.id)}>
-            <img src={tab.labelImage} alt="nunu Wheel Cake" />
+          <div
+            className="flex flex-col justify-center items-center gap-4"
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id)}
+          >
             <img
-              className="labelTitle"
+              className="w-32 h-32"
+              src={tab.labelImage}
+              alt="nunu Wheel Cake"
+            />
+            <img
+              className="labelTitle w-auto h-8"
               src={tab.labelTitleImage}
               alt="nunu Wheel Cake"
             />

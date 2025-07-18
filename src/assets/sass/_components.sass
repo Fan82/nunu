@@ -1,52 +1,5 @@
-@use './variables.sass'
+// @import './variables'
 
-// tab
-// 標籤列
-.tab-list
-    display: flex
-    justify-content: center
-    align-items: center
-    gap: 32px
-    > div
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-        gap: 8px
-    img
-        width: 10vw
-        height: 10vw
-    .labelTitle
-        width: auto
-        height: 1vw
-// 內容
-.tab-content
-    position: relative
-    ul
-        left: calc(50% + 20vw)
-        text-align: left
-        li
-            position: relative
-            margin-bottom: 65px
-            &::after
-                content: ''
-                position: absolute
-                bottom: -4px
-                left: -4px
-                width: 100%
-                height: 2px
-                background-image: url('../../assets/images/cake/line.png')
-                background-position: center
-    img
-        position: relative
-        width: 30vw
-        height: 30vw
-        left: -6vw
-// button
-button
-    background-color: #fff
-    padding: 4px 8px
-    border-radius: 100px
 // scroll
 .component-svg
     position: fixed
@@ -71,7 +24,7 @@ button
             position: relative
             width: 1px
             height: 50px
-            background-color: variables.$dark
+            background-color: #3B3B3B
             animation: moveUpFade 3s linear infinite
         &::after
             top: 30px

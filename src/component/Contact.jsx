@@ -5,16 +5,16 @@ import shopImge from "../assets/images/cake/shop.png";
 
 function Contact() {
   return (
-    <div className="content-box relative list d-flex">
-      <img className="w-40p" src={shopImge} alt="nunu Wheel cake" />
-      <div>
-        <div className="title relative">nunu Shop</div>
+    <div className="relative  text-center px-[120px] py-0 mb-[80px] flex items-center justify-center gap-8">
+      <img className="w-5/12" src={shopImge} alt="nunu Wheel cake" />
+      <div className="text-left text-base">
+        <div className="text-md font-bold">nunu Shop</div>
         <span>266 South Bridge Rd, #000, Singapore</span>
         <div className="time">
           <p>Business Day</p>
           10:00 - 18:00
         </div>
-        <button>
+        <button className="flex justify-center items-center gap-2 bg-white px-2.5 py-1.5 rounded-full">
           Contact us
           <svg
             width="24"

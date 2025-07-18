@@ -20,7 +20,7 @@ function Main() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    const sections = containerRef.current.querySelectorAll(".content-box");
+    const sections = containerRef.current.querySelectorAll("main > div");
 
     sections.forEach((section) => {
       gsap.fromTo(
@@ -47,35 +47,36 @@ function Main() {
   }, []);
 
   return (
-    <main ref={containerRef}>
-      <div className="content-box relative">
+    <main ref={containerRef} className="relative py-[40px]">
+      {/* 一 */}
+      <div className="relative text-center px-[120px] py-0 mb-[80px]">
         <img
-          className="absolute t-60px l-10p"
+          className="absolute left-32 -top-10"
           src={mainImageTop}
           alt="nunu Wheel cake"
         />
-        <img src={mainImage} alt="nunu Wheel cake" />
+        <img className="mx-auto" src={mainImage} alt="nunu Wheel cake" />
         <img
-          className="absolute r-20p b--60px"
+          className="absolute right-80 -bottom-28"
           src={mainImageBottom}
           alt="nunu Wheel cake"
         />
       </div>
-
-      <div className="content-box relative">
+      {/* 二 */}
+      <div className="relative text-center mt-80 px-[120px] py-0 mb-[80px]">
         <img
-          className="absolute b--20px r-70px z-1"
+          className="absolute w-96 right-[14rem] max-w-2xl -top-1/3  z-10"
           src={cookingButter}
           alt="nunu Wheel cake"
         />
-
-        <div className="relative b--260px">
-          <img src={cookingImge} alt="nunu Wheel cake" />
-        </div>
+        <img
+          className="relative mx-auto"
+          src={cookingImge}
+          alt="nunu Wheel cake"
+        />
       </div>
 
       <Tabs />
-      <MapCanvas />
       <Contact />
     </main>
   );
