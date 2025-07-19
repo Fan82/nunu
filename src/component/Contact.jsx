@@ -6,15 +6,17 @@ import shopImge from "../assets/images/cake/shop.png";
 function Contact() {
   return (
     <div className="relative  text-center px-[120px] py-0 mb-[80px] flex items-center justify-center gap-8">
-      <img className="w-5/12" src={shopImge} alt="nunu Wheel cake" />
+      <img className="w-4/12" src={shopImge} alt="nunu Wheel cake" />
       <div className="text-left text-base">
-        <div className="text-md font-bold">nunu Shop</div>
-        <span>266 South Bridge Rd, #000, Singapore</span>
-        <div className="time">
-          <p>Business Day</p>
+        <div className="text-md font-bold border-b-[1px] my-4 border-dark">
+          nunu Shop
+        </div>
+        <span className="text-base">266 South Bridge Rd, #000, Singapore</span>
+        <div className="time font-semibold my-4 ">
+          <p className="text-sm my-2 ">Business Day</p>
           10:00 - 18:00
         </div>
-        <button className="flex justify-center items-center gap-2 bg-white px-2.5 py-1.5 rounded-full">
+        <button className="flex justify-center items-center gap-2 bg-white px-2.5 py-1.5 rounded-full text-sm my-4">
           Contact us
           <svg
             width="24"

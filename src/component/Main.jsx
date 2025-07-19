@@ -5,7 +5,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Components
 import Tabs from "./Tabs.jsx";
 import Contact from "./Contact.jsx";
-import MapCanvas from "./MapCanvas";
 
 // Images
 import mainImage from "../assets/images/cake/mainImage.webp";
@@ -51,13 +50,13 @@ function Main() {
       {/* 一 */}
       <div className="relative text-center px-[120px] py-0 mb-[80px]">
         <img
-          className="absolute left-32 -top-10"
+          className="absolute left-24 -top-4 w-96 xl:left-64 xl:-top-8"
           src={mainImageTop}
           alt="nunu Wheel cake"
         />
         <img className="mx-auto" src={mainImage} alt="nunu Wheel cake" />
         <img
-          className="absolute right-80 -bottom-28"
+          className="absolute right-32 -bottom-20 w-96 xl:right-80 xl:-bottom-28"
           src={mainImageBottom}
           alt="nunu Wheel cake"
         />
@@ -65,7 +64,7 @@ function Main() {
       {/* 二 */}
       <div className="relative text-center mt-80 px-[120px] py-0 mb-[80px]">
         <img
-          className="absolute w-96 right-[14rem] max-w-2xl -top-1/3  z-10"
+          className="absolute w-80 right-28 -top-[11.5rem] max-w-2xl z-10 xl:w-96 xl:right-[13rem] xl:-top-1/3"
           src={cookingButter}
           alt="nunu Wheel cake"
         />

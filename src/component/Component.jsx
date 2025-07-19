@@ -9,7 +9,7 @@ function Component() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      const triggerHeight = 500;
+      const triggerHeight = 800;
 
       if (scrollY > triggerHeight && !scrolledPast) {
         setScrolledPast(true);
@@ -36,7 +36,7 @@ function Component() {
       setDisplayText(scrolledPast ? "Top" : "Scroll");
       // 淡入
       setVisible(true);
-    }, 800); // 和 CSS transition 時間要配合
+    }, 100); // 和 CSS transition 時間要配合
 
     return () => {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -49,7 +49,7 @@ function Component() {
         className={`component-svg z-10 ${scrolledPast ? "top" : ""}`}
         style={{
           opacity: visible ? 1 : 0,
-          transition: "opacity 0.3s ease",
+          transition: "opacity 0s ease",
         }}
       >
         <div>{displayText}</div>

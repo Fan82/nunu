@@ -75,11 +75,11 @@ const Tabs = () => {
           className="relative flex justify-center items-center bounce-in"
         >
           <img
-            className="relative w-96 h-fit left-16"
+            className="relative aspect-square w-96 h-fit xl:w-auto xl:max-w-[40rem] xl:left-10"
             src={currentContent.image}
             alt="nunu Wheel Cake"
           />
-          <ul className="relative text-left left-24">
+          <ul className="relative text-left left-4 xl:left-20">
             {currentContent.textList.map((item, index) => (
               <li
                 key={index}
