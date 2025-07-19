@@ -10,7 +10,7 @@ module.exports = {
       fontSize: {
         xs: "12px",
         sm: "18px",
-        base: "24px",
+        base: "20px",
         md: "32px",
         lg: "40px",
       },

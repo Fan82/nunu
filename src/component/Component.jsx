@@ -46,7 +46,7 @@ function Component() {
   return (
     <div>
       <div
-        className={`component-svg z-10 ${scrolledPast ? "top" : ""}`}
+        className={`component-svg z-10 ${scrolledPast ? "top" : ""} md:-left-6`}
         style={{
           opacity: visible ? 1 : 0,
           transition: "opacity 0s ease",
