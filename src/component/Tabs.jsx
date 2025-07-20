@@ -68,7 +68,7 @@ const Tabs = () => {
   const currentContent = tabs.find((tab) => tab.id === activeTab)?.content;
 
   return (
-    <div className="relative text-center px-[120px] py-0 mb-[80px]">
+    <div className="relative text-center px-[40px] py-0 mb-[80px] md:px-[120px]">
       {currentContent && (
         <div
           key={activeTab}
@@ -100,7 +100,7 @@ const Tabs = () => {
             onClick={() => setActiveTab(tab.id)}
           >
             <img
-              className="w-32 h-32"
+              className="w-32 h-auto aspect-square"
               src={tab.labelImage}
               alt="nunu Wheel Cake"
             />

@@ -48,23 +48,23 @@ function Main() {
   return (
     <main ref={containerRef} className="relative py-[40px]">
       {/* 一 */}
-      <div className="relative text-center px-[120px] py-0 mb-[80px]">
+      <div className="relative text-center px-[40px]  py-0 mb-[80px] md:px-[120px]">
         <img
-          className="absolute left-24 -top-4 w-96 md:left-12 xl:left-64 xl:-top-8"
+          className="absolute w-56 -top-5 left-2 md:-top-4 md:w-96 md:left-12 lg:left-24 xl:left-64 xl:-top-8"
           src={mainImageTop}
           alt="nunu Wheel cake"
         />
         <img className="mx-auto" src={mainImage} alt="nunu Wheel cake" />
         <img
-          className="absolute right-32 -bottom-20 w-96 md:right-16 xl:right-80 xl:-bottom-28"
+          className="absolute w-56 right-7 md:-bottom-20 md:w-96 md:right-16 xl:right-80 xl:-bottom-28"
           src={mainImageBottom}
           alt="nunu Wheel cake"
         />
       </div>
       {/* 二 */}
-      <div className="relative text-center mt-80 px-[120px] py-0 mb-[80px]">
+      <div className="relative text-center mt-60 px-[40px]  py-0 mb-[80px] md:px-[120px] md:mt-80">
         <img
-          className="absolute w-80 right-28 -top-[11.5rem] max-w-2xl z-10 md:w-72 md:-top-52 md:right-[5.5rem] xl:w-96 xl:right-[13rem] xl:-top-1/3"
+          className="absolute w-44 -top-32 right-5 z-10 md:w-72 md:-top-36 md:right-[5.5rem] lg:right-36 lg:-top-32 lg:w-80 xl:w-96 xl:right-[13rem] xl:-top-1/3"
           src={cookingButter}
           alt="nunu Wheel cake"
         />
