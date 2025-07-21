@@ -5,8 +5,8 @@ import shopImge from "../assets/images/cake/shop.png";
 
 function Contact() {
   return (
-    <div className="relative  text-center px-[120px] py-0 mb-[80px] flex items-center justify-center gap-8">
-      <img className="w-4/12 md:w-72" src={shopImge} alt="nunu Wheel cake" />
+    <div className="relative  text-center py-0 px-[40px] mb-[80px] flex items-center justify-center gap-8 flex-col md:px-[120px] md:flex-row">
+      <img className="w-auto md:w-96" src={shopImge} alt="nunu Wheel cake" />
       <div className="text-left text-base ">
         <div className="text-md font-bold border-b-[.5px] my-4 border-dark md:text-base">
           nunu Shop

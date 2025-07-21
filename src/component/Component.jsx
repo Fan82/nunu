@@ -1,61 +1,70 @@
 import React, { useState, useEffect, useRef } from "react";
 
-function Component() {
-  const [scrolledPast, setScrolledPast] = useState(false); // 目標狀態
-  const [visible, setVisible] = useState(true); // 文字是否顯示(透明度控制)
-  const [displayText, setDisplayText] = useState("Scroll"); // 實際顯示文字
+function ScrollTopIndicator() {
+  const [displayText, setDisplayText] = useState("Scroll");
+  const [visible, setVisible] = useState(true);
   const timeoutRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY || window.pageYOffset;
-      const triggerHeight = 800;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.body.scrollHeight;
+      const windowBottom = scrollY + windowHeight;
 
-      if (scrollY > triggerHeight && !scrolledPast) {
-        setScrolledPast(true);
-      } else if (scrollY < triggerHeight && scrolledPast) {
-        setScrolledPast(false);
+      // 條件 1：是否滑過第一區塊（假設第一區塊高 600px）
+      const showScroll = scrollY < 300;
+
+      // 條件 2：是否接近頁面底部（例如最後20%開始顯示 Top）
+      const showTop = windowBottom >= documentHeight * 0.8;
+
+      let nextText = "";
+
+      if (showScroll) {
+        nextText = "Scroll";
+      } else if (showTop) {
+        nextText = "Top";
+      }
+
+      if (nextText !== displayText) {
+        // 淡出
+        setVisible(false);
+
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        timeoutRef.current = setTimeout(() => {
+          setDisplayText(nextText);
+          setVisible(true);
+        }, 100); // CSS 淡出對應的時間
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll(); // 初始化
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
     };
-  }, [scrolledPast]);
+  }, [displayText]);
 
-  // 用 useEffect 監控 scrolledPast 狀態變化，觸發淡出換字流程
-  useEffect(() => {
-    // 先淡出
-    setVisible(false);
-
-    timeoutRef.current = setTimeout(() => {
-      // 換字
-      setDisplayText(scrolledPast ? "Top" : "Scroll");
-      // 淡入
-      setVisible(true);
-    }, 100); // 和 CSS transition 時間要配合
-
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [scrolledPast]);
+  const handleClick = () => {
+    if (displayText === "Top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
 
   return (
-    <div>
-      <div
-        className={`component-svg z-10 ${scrolledPast ? "top" : ""} md:-left-6`}
-        style={{
-          opacity: visible ? 1 : 0,
-          transition: "opacity 0s ease",
-        }}
-      >
-        <div>{displayText}</div>
-      </div>
+    <div
+      className="component-svg fixed bottom-6 z-10 cursor-pointer"
+      style={{
+        opacity: visible ? 1 : 0,
+        transition: "opacity 0.3s ease",
+      }}
+      onClick={handleClick}
+    >
+      <div>{displayText}</div>
     </div>
   );
 }
 
-export default Component;
+export default ScrollTopIndicator;

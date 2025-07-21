@@ -92,10 +92,10 @@ const Tabs = () => {
         </div>
       )}
       {/* 標籤 */}
-      <div className="flex justify-center items-center gap-8 mt-12">
+      <div className="flex justify-center items-center gap-12">
         {tabs.map((tab) => (
           <div
-            className="flex flex-col justify-center items-center gap-4"
+            className="flex flex-col justify-center items-center gap-2"
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
           >
