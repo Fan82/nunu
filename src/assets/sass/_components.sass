@@ -1,77 +1,54 @@
-// @import './variables'
-
-// scroll
 .component-svg
-    left: 50%
-    transform: translateX(-50%)
-    display: flex
-    justify-content: center
-    align-items: center
-    width: 200px
-    height: 200px
     font-size: 14px
-    > div
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-        gap: 8px
-        width: 80px
-        height: 80px
+    transition: all 0.3s ease
+    color: rgba(59, 59, 59, 1)
+    .line
+        position: relative
+        width: 1.5px
+        height: 50px
         overflow: hidden
-        &::before,
-        &::after
-            content: ''
-            position: relative
-            width: 1px
+        margin: 0 auto 10px
+        span
+            position: absolute
+            top: 0
+            left: 0
+            background-color: rgba(59, 59, 59, 1)
+            width: 1.5px
             height: 50px
-            background-color: #3B3B3B
-            animation: moveUpFade 3s linear infinite
-        &::after
-            top: 30px
-            animation-direction: reverse
-        &::before
-            display: none
-            bottom: 30px
+            transform: translateY(-100%)
+            -webkit-animation: sdb 2s ease infinite
+            animation: sdb 2s ease infinite
     &.top
-        > div
+        background-color: #fefdf653
+        border-radius: 100px
+        padding: 20px
+        .line
+            overflow: visible
+            background-color: rgba(59, 59, 59, 1)
             &::before
-                display: block
-            &::after
-                display: none
+                content: ""
+                position: absolute
+                top: 0
+                right: -3px
+                background-color: rgba(59, 59, 59, 1)
+                width: 1.5px
+                height: 11px
+                transform: rotate(-40deg) translateX(50%)
 
-@keyframes moveUpFade
+            span
+                animation: none
+                transform: rotate(40deg)
+                transform-origin: top
+                height: 12px
+
+@keyframes sdb
     0%
-        transform: translateY(50%)
-        opacity: 0
-
-    10%
+        -webkit-transform: translateY(-100%)
         opacity: 1
 
-    90%
-        transform: translateY(-50%)
+    20%
         opacity: 1
 
     100%
-        opacity: 0
-        transform: translateY(-90%)
-
-// animation
-.bounce-in
-    animation: bounceIn 0.5s ease
-
-.scroll-section
-    opacity: 0
-    transform: translateY(50px)
-
-@keyframes bounceIn
-    0%
-        transform: scale(0.9)
-        opacity: 0
-
-    60%
-        transform: scale(1.05)
+        -webkit-transform: translateY(100%)
         opacity: 1
-
-    100%
-        transform: scale(1)
