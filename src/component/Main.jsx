@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Components
 import Tabs from "./Tabs.jsx";
 import MapScroll from "./MapScroll.jsx";
+import Contact from "./Contact.jsx";
 
 // Images
 import mainImage from "../assets/images/cake/mainImage.webp";
@@ -47,9 +48,9 @@ function Main() {
   }, []);
 
   return (
-    <main ref={containerRef} className="relative py-[40px]">
+    <main ref={containerRef} className="relative pt-[40px]">
       {/* 一 */}
-      <div className="relative text-center px-[40px]  py-0 mb-[80px] md:px-[120px]">
+      <div className="relative text-center px-[40px]  py-0 mb-28 md:px-[120px]">
         <img
           className="absolute w-56 -top-5 left-2 md:-top-4 md:w-96 md:left-12 lg:left-24 xl:left-64 xl:-top-8"
           src={mainImageTop}
@@ -63,7 +64,7 @@ function Main() {
         />
       </div>
       {/* 二 */}
-      <div className="relative text-center mt-60 px-[40px]  py-0 mb-[80px] md:px-[120px] md:mt-80">
+      <div className="relative text-center mt-60 px-[40px]  py-0 mb-28 md:px-[120px] md:mt-80">
         <img
           src={subTitle}
           className="absolute left-10 w-48 -top-24"
@@ -83,6 +84,7 @@ function Main() {
 
       <Tabs />
       <MapScroll />
+      <Contact />
     </main>
   );
 }

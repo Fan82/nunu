@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer() {
   return (
-    <footer className="flex flex-col justify-center items-center w-full px-[4px] py-[12px] backdrop-blur-md z-10 bg-light">
+    <footer className="flex flex-col justify-center items-center w-full px-[4px] py-[12px] backdrop-blur-md z-10">
       <div className="flex justify-center items-end my-4 gap-2">
         <a href="javascript:void(0)">
           <svg
