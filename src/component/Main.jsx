@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Components
 import Tabs from "./Tabs.jsx";
-import MapScene from "./MapScene.jsx";
+import MapScroll from "./MapScroll.jsx";
 
 // Images
 import mainImage from "../assets/images/cake/mainImage.webp";
@@ -82,7 +82,7 @@ function Main() {
       </div>
 
       <Tabs />
-      <MapScene />
+      <MapScroll />
     </main>
   );
 }
