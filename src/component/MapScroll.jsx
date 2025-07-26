@@ -73,13 +73,15 @@ export default function MapScroll() {
         ].map((item, i) => (
           <section
             key={i}
-            className="w-screen h-full flex flex-col items-center p-4 pt-0 text-dark text-center"
+            className="w-screen h-full flex flex-col items-center p-4 pt-28 text-dark text-center"
           >
             {item.image && (
               <img
                 src={item.image}
                 alt="nunu"
-                className="mx-auto w-72 mb-6 h-[300px]"
+                className={`mx-auto mb-6 h-[300px]  ${
+                  item.image.includes("van") ? "w-96" : "w-72"
+                }`}
               />
             )}
             <div className="flex flex-col items-center gap-2">

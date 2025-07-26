@@ -12,7 +12,6 @@ import mainImage from "../assets/images/cake/mainImage.webp";
 import mainImageTop from "../assets/images/cake/mainImage-top.png";
 import mainImageBottom from "../assets/images/cake/mainImage-bottom.png";
 import cookingImge from "../assets/images/cake/cooking.webp";
-import cookingButter from "../assets/images/cake/cooking-butter.webp";
 import subTitle from "../assets/images/cake/subtitle.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -64,15 +63,10 @@ function Main() {
         />
       </div>
       {/* 二 */}
-      <div className="relative text-center mt-60 px-[40px]  py-0 mb-28 md:px-[120px] md:mt-80">
+      <div className="relative text-center mt-60 py-0 mb-16 md:px-[120px] md:mt-80">
         <img
           src={subTitle}
-          className="absolute left-10 w-48 -top-24"
-          alt="nunu Wheel cake"
-        />
-        <img
-          className="absolute w-44 -top-32 right-5 z-10 md:w-72 md:-top-36 md:right-[5.5rem] lg:right-36 lg:-top-32 lg:w-80 xl:w-96 xl:right-[13rem] xl:-top-1/3"
-          src={cookingButter}
+          className="absolute left-10 w-64 -top-24 md:w-[36rem] md:top-6"
           alt="nunu Wheel cake"
         />
         <img

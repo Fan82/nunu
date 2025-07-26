@@ -69,25 +69,25 @@ const Tabs = () => {
   const currentContent = currentTab?.content;
 
   return (
-    <div className="relative text-center ml-10 py-4 px-4 mb-[80px] bg-light rounded-l-3xl md:px-[120px]">
+    <div className="relative text-center ml-10 py-4 pt-12 px-4 mb-[80px] bg-light rounded-l-3xl md:px-[120px]">
       {currentContent && currentTab && (
         <div
           key={activeTab}
-          className="relative flex justify-center flex-col items-center bounce-in"
+          className="relative flex justify-center flex-col items-center bounce-in md:flex-row md:gap-12"
         >
           <img
-            className="relative aspect-square w-64 h-fit md:w-72 xl:w-auto xl:max-w-[40rem] xl:left-10"
+            className="relative aspect-square w-64 h-fit md:w-96"
             src={currentContent.image}
             alt="nunu Wheel Cake"
           />
-          <div className="relative">
-            <div className="text-sm font-semibold capitalize">
+          <div className="relative max-w-96">
+            <div className="text-sm font-semibold capitalize md:text-lg md:text-left ">
               {currentTab.titleText}
             </div>
             {currentContent.textList.map((item, index) => (
               <p
                 key={index}
-                className="relative mb-2 text-xs/5 tracking-wide text-dark"
+                className="relative mb-2 text-xs/5 tracking-wide text-dark md:whitespace-break-spaces md:text-left md:leading-8 md:text-base"
               >
                 {item}
               </p>
@@ -96,20 +96,28 @@ const Tabs = () => {
         </div>
       )}
       {/* 標籤 */}
-      <div className="flex justify-center items-center gap-4">
-        {tabs.map((tab) => (
-          <div
-            className="flex flex-col justify-center items-center cursor-pointer"
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-          >
-            <img
-              className="w-32 h-auto aspect-square"
-              src={tab.labelImage}
-              alt="nunu Wheel Cake"
-            />
-          </div>
-        ))}
+      <div className="flex justify-center items-center gap-4 flex-wrap md:gap-12">
+        {tabs.map((tab) => {
+          const isActive = tab.id === activeTab;
+          // 在小尺寸時，如果是 active tab，就不顯示
+          const isHiddenOnSmall = isActive ? "sm:flex hidden" : "flex";
+
+          return (
+            <div
+              className={`${isHiddenOnSmall} flex-col justify-center items-center cursor-pointer transition-opacity duration-200 ${
+                isActive ? "opacity-100" : "opacity-50"
+              } active:scale-40 focus:scale-40 transform transition-transform hover:opacity-70`}
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              <img
+                className="w-32 h-auto aspect-square md:w-40"
+                src={tab.labelImage}
+                alt={`nunu Wheel Cake ${tab.titleText}`}
+              />
+            </div>
+          );
+        })}
       </div>
     </div>
   );

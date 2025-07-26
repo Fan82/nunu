@@ -5,12 +5,12 @@ import appImge from "../assets/images/app.png";
 
 function Contact() {
   return (
-    <div className="relative  text-center py-0 px-[40px] -mt-20 pt-4 bg-light text-dark">
+    <div className="relative  text-center py-0 px-[40px] pt-4 bg-light text-dark md:flex md:justify-center md:gap-12">
       <div className="text-left mb-10">
         <div className="text-base font-bold my-4">
           Carry sweetness with you — nunu App is live ✨
         </div>
-        <span className="text-sm">
+        <span className="text-sm whitespace-pre-wrap max-w-96 block">
           Wanna be the first to discover new cuties and flavors? Wanna take all
           your dessert friends home? Download the app — nunu will sweet-talk you
           every day!
