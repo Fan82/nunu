@@ -54,7 +54,7 @@ function ScrollTopIndicator() {
       {displayText && (
         <motion.div
           key={displayText}
-          className={`component-svg fixed bottom-12 left-6 z-10 cursor-pointer ${
+          className={`component-svg mix-blend-luminosity fixed bottom-12 left-6 z-10 cursor-pointer md:left-20 lg:left-14 ${
             displayText === "Top" ? "top" : ""
           }`}
           initial={{ opacity: 0, y: 20 }}

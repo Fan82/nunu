@@ -69,11 +69,11 @@ const Tabs = () => {
   const currentContent = currentTab?.content;
 
   return (
-    <div className="relative text-center ml-10 py-4 pt-12 px-4 mb-[80px] bg-light rounded-l-3xl md:px-[120px]">
+    <div className="relative text-center ml-10 py-4 pt-12 px-4 mb-[80px] bg-light rounded-l-3xl">
       {currentContent && currentTab && (
         <div
           key={activeTab}
-          className="relative flex justify-center flex-col items-center bounce-in md:flex-row md:gap-12"
+          className="relative flex justify-center items-center bounce-in flex-col lg:flex-row lg:gap-8"
         >
           <img
             className="relative aspect-square w-64 h-fit md:w-96"
@@ -87,7 +87,7 @@ const Tabs = () => {
             {currentContent.textList.map((item, index) => (
               <p
                 key={index}
-                className="relative mb-2 text-xs/5 tracking-wide text-dark md:whitespace-break-spaces md:text-left md:leading-8 md:text-base"
+                className="relative mb-2 text-sm tracking-wide text-dark md:whitespace-break-spaces md:text-left md:leading-8 md:text-base"
               >
                 {item}
               </p>
@@ -96,7 +96,7 @@ const Tabs = () => {
         </div>
       )}
       {/* 標籤 */}
-      <div className="flex justify-center items-center gap-4 flex-wrap md:gap-12">
+      <div className="flex justify-center items-center  gap-6">
         {tabs.map((tab) => {
           const isActive = tab.id === activeTab;
           // 在小尺寸時，如果是 active tab，就不顯示
@@ -111,7 +111,7 @@ const Tabs = () => {
               onClick={() => setActiveTab(tab.id)}
             >
               <img
-                className="w-32 h-auto aspect-square md:w-40"
+                className="w-32 h-auto aspect-square"
                 src={tab.labelImage}
                 alt={`nunu Wheel Cake ${tab.titleText}`}
               />

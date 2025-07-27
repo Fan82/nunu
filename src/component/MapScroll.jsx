@@ -73,29 +73,35 @@ export default function MapScroll() {
         ].map((item, i) => (
           <section
             key={i}
-            className="w-screen h-full flex flex-col items-center p-4 pt-28 text-dark text-center"
+            className="w-screen h-full flex flex-col items-center justify-center p-4 pt-28 text-dark text-center md:flex-row lg:gap-8"
           >
             {item.image && (
               <img
                 src={item.image}
                 alt="nunu"
-                className={`mx-auto mb-6 h-[300px]  ${
+                className={`mx-auto mb-6 h-[300px] md:w-auto md:h-96 lg:m-0 lg:h-[36rem] ${
                   item.image.includes("van") ? "w-96" : "w-72"
                 }`}
               />
             )}
             <div className="flex flex-col items-center gap-2">
-              <h4 className="text-2xl font-bold after:content'' after:bg-dark after:w-11/12 after:h-0.5 after:mt-1 after:block">
+              <h4 className="text-2xl font-bold lg:text-6xl after:content'' after:bg-dark after:w-11/12 after:h-0.5 after:mt-1 after:block lg:after:mt-4">
                 {item.title}
               </h4>
-              <div className="text-sm">{item.content}</div>
+              <div className="text-sm lg:text-md/loose">{item.content}</div>
               <div>
-                <div className="text-sm font-semibold inline-block">
+                <div className="text-sm font-semibold inline-block lg:text-md/loose">
                   {item.week}
                 </div>
-                <div className="text-sm  inline-block ml-2">{item.time}</div>
+                <div className="text-sm inline-block ml-2 lg:text-md/loose">
+                  {item.time}
+                </div>
               </div>
-              <button className="flex justify-center items-center gap-2 bg-white px-2.5 py-1.5 rounded-full text-sm my-4">
+              <button
+                className={`flex justify-center items-center gap-2 bg-white px-2.5 py-1.5 rounded-full text-sm my-4 ${
+                  item.image.includes("shop") ? "block" : "hidden"
+                }`}
+              >
                 Contact us
                 <svg
                   width="24"

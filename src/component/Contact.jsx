@@ -5,7 +5,7 @@ import appImge from "../assets/images/app.png";
 
 function Contact() {
   return (
-    <div className="relative  text-center py-0 px-[40px] pt-4 bg-light text-dark md:flex md:justify-center md:gap-12">
+    <div className="relative  text-center py-0 px-[40px] pt-4 bg-light text-dark -mt-64 max-[400px]:mt-0 lg:mt-0 lg:pt-9 md:flex md:justify-center md:gap-12">
       <div className="text-left mb-10">
         <div className="text-base font-bold my-4">
           Carry sweetness with you — nunu App is live ✨

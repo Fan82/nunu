@@ -11,8 +11,11 @@ function Header() {
           className="object-cover w-[180px] h-full"
         />
       </a>
-      <div className="flex justify-center items-end my-4 gap-2">
-        <a href="javascript:void(0)">
+      <div className="flex justify-center items-end my-4 gap-2 md:gap-7">
+        <a
+          href="javascript:void(0)"
+          className="md:scale-125 hover:scale-150 hover:object-scale-down"
+        >
           <svg
             width="24"
             height="24"
@@ -34,7 +37,10 @@ function Header() {
             <circle cx="352" cy="160" r="16" fill="#000" />
           </svg>
         </a>
-        <a href="javascript:void(0)">
+        <a
+          href="javascript:void(0)"
+          className="md:scale-125 hover:scale-150 hover:object-scale-down"
+        >
           <svg
             width="28"
             height="28"
@@ -51,7 +57,10 @@ function Header() {
             />
           </svg>
         </a>
-        <a href="javascript:void(0)">
+        <a
+          href="javascript:void(0)"
+          className="md:scale-125 hover:scale-150 hover:object-scale-down"
+        >
           <svg
             width="21"
             height="21"
