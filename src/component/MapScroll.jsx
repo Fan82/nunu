@@ -73,7 +73,7 @@ export default function MapScroll() {
         ].map((item, i) => (
           <section
             key={i}
-            className="w-screen h-full flex flex-col items-center justify-center p-4 pt-28 text-dark text-center md:flex-row lg:gap-8"
+            className="w-screen h-full flex flex-col items-center justify-center p-4 pt-28 text-dark text-center md:flex-row lg:gap-8 lg:pt-0 lg:-mt-28 lg:justify-start"
           >
             {item.image && (
               <img

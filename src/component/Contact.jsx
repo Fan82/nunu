@@ -5,19 +5,19 @@ import appImge from "../assets/images/app.png";
 
 function Contact() {
   return (
-    <div className="relative  text-center py-0 px-[40px] pt-4 bg-light text-dark -mt-64 max-[400px]:mt-0 lg:mt-0 lg:pt-9 md:flex md:justify-center md:gap-12">
+    <div className="relative  text-center py-0 px-[40px] pt-4 bg-light text-dark -mt-64 max-[400px]:mt-0 md:flex md:justify-center md:gap-12">
       <div className="text-left mb-10">
-        <div className="text-base font-bold my-4">
+        <div className="text-base font-bold my-4 lg:text-lg lg:whitespace-pre-wrap lg:max-w-[32rem]">
           Carry sweetness with you — nunu App is live ✨
         </div>
-        <span className="text-sm whitespace-pre-wrap max-w-96 block">
+        <span className="text-sm whitespace-pre-wrap max-w-96 block lg:text-base/10">
           Wanna be the first to discover new cuties and flavors? Wanna take all
           your dessert friends home? Download the app — nunu will sweet-talk you
           every day!
         </span>
         <div className="mt-2 mb-2">
           <svg
-            className="inline-block mr-4"
+            className="inline-block mr-4 lg:h-12 lg:w-28"
             width="90"
             height="31"
             viewBox="0 0 90 31"
@@ -135,7 +135,7 @@ function Contact() {
             />
           </svg>
           <svg
-            className="inline-block"
+            className="inline-block lg:h-12 lg:w-28"
             width="91"
             height="31"
             viewBox="0 0 91 31"

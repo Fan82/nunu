@@ -69,14 +69,14 @@ const Tabs = () => {
   const currentContent = currentTab?.content;
 
   return (
-    <div className="relative text-center ml-10 py-4 pt-12 px-4 mb-[80px] bg-light rounded-l-3xl">
+    <div className="relative text-center ml-10 py-4 pt-12 px-4 mb-[80px] bg-light rounded-l-3xl lg:rounded-3xl lg:ml-0 lg:p-12">
       {currentContent && currentTab && (
         <div
           key={activeTab}
           className="relative flex justify-center items-center bounce-in flex-col lg:flex-row lg:gap-8"
         >
           <img
-            className="relative aspect-square w-64 h-fit md:w-96"
+            className="relative aspect-square w-64 h-fit md:w-96 lg:w-[30rem]"
             src={currentContent.image}
             alt="nunu Wheel Cake"
           />
@@ -111,7 +111,7 @@ const Tabs = () => {
               onClick={() => setActiveTab(tab.id)}
             >
               <img
-                className="w-32 h-auto aspect-square"
+                className="w-32 h-auto aspect-square lg:w-44"
                 src={tab.labelImage}
                 alt={`nunu Wheel Cake ${tab.titleText}`}
               />
