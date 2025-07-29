@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/nunu/static/css/main.3bb254c6.css",
+    "main.js": "/nunu/static/js/main.16b0d7f3.js",
+    "static/media/cooking.webp": "/nunu/static/media/cooking.4d433a9a535c76c63bce.webp",
+    "static/media/van.webp": "/nunu/static/media/van.d2a2f97c5f6e29797ebe.webp",
+    "static/media/oreo.png": "/nunu/static/media/oreo.b5bcff43bbc7c9595b02.png",
+    "static/media/taro.png": "/nunu/static/media/taro.1ed723bc54644912a01d.png",
+    "static/media/redbean.png": "/nunu/static/media/redbean.c626abf810cbe00e4b4c.png",
+    "static/media/vanilla.png": "/nunu/static/media/vanilla.940a8974b93b6ff8cab6.png",
+    "static/media/mainImage.webp": "/nunu/static/media/mainImage.5056ecc3f32ffa314457.webp",
+    "static/media/shop.png": "/nunu/static/media/shop.a2abcaa0bbd64b5b7101.png",
+    "static/media/app.png": "/nunu/static/media/app.d98442e4c0a53c8ca11a.png",
+    "index.html": "/nunu/index.html",
+    "main.3bb254c6.css.map": "/nunu/static/css/main.3bb254c6.css.map",
+    "main.16b0d7f3.js.map": "/nunu/static/js/main.16b0d7f3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3bb254c6.css",
+    "static/js/main.16b0d7f3.js"
+  ]
+}
